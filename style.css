@@ -1,0 +1,140 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #171a21;
+  height: 60px;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 20;
+}
+.nav-bar {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 30px;
+}
+
+.menu li {
+  list-style: none;
+  display: inline;
+  padding-right: 20px;
+  font-size: 1.2rem;
+  color: white;
+  transition: 0.2s;
+}
+.menu li:hover {
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+
+main {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.search {
+  width: 15%;
+  background-color: yellow;
+}
+#searchgame {
+  padding: 20px;
+}
+#store_search_link {
+  width: 10%;
+  height: 20px;
+  color: red;
+  transition: 0.2s;
+}
+#store_search_link:hover {
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+/* form.form {
+  width: 100%;
+  height: 25px;
+  /* background-color: aqua; */
+/* border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 10px;} */
+
+.searchbox {
+  width: 250px;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* border: 1px solid rgba(0, 0, 0, 0.3); */
+  border-radius: 30px;
+  /* background-color: aqua; */
+}
+#searchForm {
+  height: 30px;
+  font-size: 1.2rem;
+  width: 200px;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 1px 0px 8px 0px rgba(0, 0, 0, 0.9);
+  box-shadow: 1px 0px 8px 0px rgba(0, 0, 0, 0.9);
+}
+.search .category {
+  /* background-color: aqua; */
+  margin-top: 20px;
+  padding: 20px 0;
+  border-top: 2px solid black;
+}
+.search .category .categoryGroup {
+  width: 70%;
+}
+.search .category .categoryGroup li {
+  list-style: none;
+  font-size: 1rem;
+  margin-top: 5px;
+  transition: 0.4s;
+}
+.search .category .categoryGroup li:hover {
+  cursor: pointer;
+  background-color: blue;
+  text-align: center;
+  color: red;
+  padding: 5px 0;
+  font-size: 1.3rem;
+}
+.showgame {
+  background-color: blue;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  height: auto;
+  padding: 30px;
+}
+.showgame .background {
+  width: 275px;
+  background-color: yellow;
+  height: 180px;
+  padding: 5px;
+  margin: 5px;
+}
+.showgame .background .game_wrapper {
+  width: 100%;
+  height: 170px;
+  color: black;
+  font-size: 1rem;
+  background-color: rgb(240, 240, 121);
+  /* border: 1px solid black; */
+  /* height: 180px; */
+}
+.showgame .background .game_wrapper img {
+  width: 100%;
+}
+.showgame .background .game_wrapper img:hover {
+  filter: brightness(120%);
+}
