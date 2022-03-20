@@ -1,4 +1,5 @@
 
+const defaultImage = "https://znews-photo.zadn.vn/w660/Uploaded/lce_uxlcq/2021_03_07/wp6885024.jpg";
 const getAllGames = async () => {
   try {
     const response = await fetch('https://cs-steam-api.herokuapp.com/games?limit=25');
@@ -19,7 +20,7 @@ const renderAllGames = async () => {
       appid.innerHTML = `<div class="background">
                        <div class="game_wrapper">
                          <div class="cover">
-                           <img src="${game.header_image}">
+                           <img src="${game.header_image || defaultImage}">
                            <div class="game_info">
                              <p>${game.name}</p>
                              <p>${game.price} $</p>
@@ -55,7 +56,7 @@ const renderDetailGame = async (app) => {
               </div>
               <div class="picture">
                 <div class="img">
-                  <img src="${detailGames.data.header_image}" alt="picture">
+                  <img src="${detailGames.data.header_image || defaultImage}" alt="picture">
                 </div>
                 <div class="text">
                   <p>${detailGames.data.description}</p>
@@ -94,7 +95,7 @@ const renderListGamesToInput = async () => {
       div.innerHTML = `<div class="background">
                        <div class="game_wrapper">
                          <div class="cover">
-                           <img src="${game.header_image}">
+                           <img src="${game.header_image || defaultImage}">
                            <div class="game_info">
                              <p>${game.name}</p>
                              <p>${game.price} $</p>
@@ -138,7 +139,7 @@ const renderListGamesToGenres = async (index) => {
       div.innerHTML = `<div class="background">
                         <div class="game_wrapper">
                            <div class="cover">
-                             <img src="${game.header_image}">
+                             <img src="${game.header_image || defaultImage}">
                              <div class="game_info">
                                 <p>${game.name}</p>
                                 <p>${game.price} $</p>
@@ -156,8 +157,50 @@ const renderListGamesToGenres = async (index) => {
   }
 }
 
-
 const btnHome = document.querySelector(".home-game");
 btnHome.addEventListener("click", () => {
   location.reload();
 })
+
+const getTrending = async () => {
+  try {
+    const response = await fetch("https://cs-steam-api.herokuapp.com/features")
+    const listTrends = await response.json();
+    return listTrends;
+  } catch (error) {
+    console.log("error", error)
+  }
+}
+
+const listTrending = document.querySelector(".trend-game");
+listTrending.addEventListener("click", () => {
+  getTrendingGame()
+})
+const getTrendingGame = async () => {
+  try {
+    const listTrends = await getTrending();
+    const showGames = document.querySelector(".showGames")
+    showGames.innerHTML = "";
+    listTrends.data.forEach((game, index) => {
+      const positive = listTrends.data[index].positive_ratings
+      const div = document.createElement("div");
+      div.innerHTML = `<div class="background">
+      <div class="game_wrapper">
+      <div class="cover">
+      <img src="${game.header_image}">
+      <div class="game_info">
+      <p>${game.name}</p>
+      <p>${game.price} $</p>
+      </div>
+      </div>
+      </div>
+      </div>`;
+      showGames.appendChild(div);
+      div.addEventListener("click", () => {
+        renderDetailGame(positive);
+      })
+    })
+  } catch (error) {
+    console.log("error", error)
+  }
+}
