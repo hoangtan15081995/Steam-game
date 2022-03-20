@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 header {
@@ -34,14 +35,14 @@ header .nav-bar .menu li:hover {
   font-size: 1.4rem;
 }
 main {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 main .search {
-  width: 30%;
-  background-color: yellow;
+  width: 20%;
+  background-color: #064f79;
 }
 main .search #searchGame {
   padding: 20px;
@@ -54,27 +55,31 @@ main .search #searchGame .form {
   outline: none;
 }
 main .search #searchGame .form .searchBox {
-  width: 240px;
+  width: 270px;
   height: 30px;
+  background-color: rgb(70, 115, 238);
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
+  justify-content: center;
   align-items: center;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 30px;
-  background-color: white;
+  /* background-color: white; */
   -webkit-box-shadow: 1px 0px 8px 0px rgba(0, 0, 0, 0.9);
   box-shadow: 1px 0px 8px 0px rgba(0, 0, 0, 0.9);
 }
 
-main .search #searchGame .form .searchBox #store_search_link {
-  width: 10%;
+main .search #searchGame .form .searchBox #btn {
+  width: auto;
+  padding: 1px 4px;
+  vertical-align: middle;
   height: 20px;
-  color: red;
+  color: black;
   transition: 0.2s;
+  background-color: rgb(250, 15, 54);
 }
-main .search #searchGame .form .searchBox #store_search_link:hover {
+main .search #searchGame .form .searchBox #btn:hover {
   cursor: pointer;
-  font-size: 1.3rem;
 }
 
 main .search #searchGame .category {
@@ -91,6 +96,8 @@ main .search #searchGame .category .categoryGroup li {
   padding: 10px 0;
   margin-top: 5px;
   transition: 0.4s;
+  color: white;
+  font-weight: 15px;
 }
 main .search #searchGame .category .categoryGroup li:hover {
   cursor: pointer;
@@ -100,31 +107,46 @@ main .search #searchGame .category .categoryGroup li:hover {
   padding: 5px 0;
   font-size: 1.3rem;
 }
-main .showGame {
-  background-color: blue;
+main .showGames {
+  width: 80%;
+  background-color: #66c0f4;
   display: flex;
   flex-flow: row wrap;
   align-content: flex-start;
   height: auto;
   padding: 30px;
 }
-main .showGame .background {
+main .showGames .background {
   width: 275px;
   background-color: yellow;
   height: 180px;
   padding: 5px;
   margin: 5px;
 }
-main .showGame .background .game_wrapper {
+main .showGames .background .game_wrapper {
   width: 100%;
   height: 170px;
   color: black;
   font-size: 1rem;
   background-color: rgb(240, 240, 121);
 }
-main .showGame .background .game_wrapper img {
+main .showGames .background .game_wrapper .cover {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main .showGames .background .game_wrapper .cover img {
   width: 100%;
 }
-main .showGame .background .game_wrapper img:hover {
+main .showGames .background .game_wrapper .cover img:hover {
   filter: brightness(120%);
+}
+main .showGames .background .game_wrapper .cover .game_info {
+  display: flex;
+  justify-content: space-between;
+}
+main .showGames .background .game_wrapper .cover .game_info p {
+  font-size: 1.1rem;
 }
