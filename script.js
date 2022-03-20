@@ -38,7 +38,6 @@ const renderAllGames = async () => {
 }
 renderAllGames();
 
-
 const renderDetailGame = async (app) => {
   try {
     const number = parseInt(app);
@@ -47,8 +46,7 @@ const renderDetailGame = async (app) => {
     const detailGames = await resp.json();
     const showGames = document.querySelector(".showGames");
     showGames.innerHTML = "";
-    // const detail = document.createElement("div");
-    showGames.innerHTML =`<div class="showDetailGame" background-image: url("${ detailGames.data.background})">
+    showGames.innerHTML =`<div class="showDetailGame" style="background-image: url(${detailGames.data.background})">
             <div class="detail">
               <div class="name">
                 <h2>${detailGames.data.name}</h2>
