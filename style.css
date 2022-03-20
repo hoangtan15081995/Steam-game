@@ -49,7 +49,7 @@ main .search #searchGame {
 }
 
 main .search #searchGame .searchBox {
-  background-color: #1382c2;
+  background-color: white;
   margin: auto;
   width: 270px;
   height: 40px;
@@ -98,14 +98,18 @@ main .search #searchGame .category {
 }
 main .search #searchGame .category .categoryGroup {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 main .search #searchGame .category .categoryGroup li {
   background-color: rgba(0, 0, 0, 0.733);
+  width: 80%;
   border-radius: 15px;
   list-style: none;
   font-size: 0.9rem;
-  padding: 8px 0;
-  margin-top: 15px;
+  padding: 12px 0;
+  margin-top: 20px;
   transition: 0.4s;
   color: white;
   font-weight: bold;

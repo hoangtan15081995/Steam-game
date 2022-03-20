@@ -41,6 +41,7 @@ renderAllGames();
 const renderDetailGame = async (app) => {
   try {
     const number = parseInt(app);
+    console.log(number);
     const url = `https://cs-steam-api.herokuapp.com/single-game/${number}`;
     const resp = await fetch(url);
     const detailGames = await resp.json();
@@ -111,7 +112,6 @@ const renderListGamesToInput = async () => {
   }
 }
 
-
 const liGenres = document.querySelectorAll(".genres");
 console.log(liGenres);
 
@@ -124,15 +124,16 @@ liGenres.forEach((e, index) => {
 const renderListGamesToGenres = async (index) => {
   try {
     const genres = liGenres[index].innerHTML.toLowerCase();
-    // console.log(genres)
+    console.log(genres);
     const url = `https://cs-steam-api.herokuapp.com/games?genres=${genres}&limit=25`;
     const res = await fetch(url);
     const listGames = await res.json();
     // console.log(listGames);
     const showGames = document.querySelector(".showGames");
     showGames.innerHTML = "";
-    listGames.data.forEach((game) => {
+    listGames.data.forEach((game,index) => {
       const app = listGames.data[index].appid;
+      console.log(app);
       const div = document.createElement("div");
       div.innerHTML = `<div class="background">
                         <div class="game_wrapper">
@@ -156,3 +157,7 @@ const renderListGamesToGenres = async (index) => {
 }
 
 
+const btnHome = document.querySelector(".home-game");
+btnHome.addEventListener("click", () => {
+  location.reload();
+})
