@@ -42,13 +42,15 @@ main {
 }
 main .search {
   width: 25%;
+  background-color: #66c0f4b0;
 }
 main .search #searchGame {
   padding: 20px;
 }
 
 main .search #searchGame .searchBox {
-  margin-left: 15px;
+  background-color: #1382c2;
+  margin: auto;
   width: 270px;
   height: 40px;
   display: flex;
@@ -56,16 +58,17 @@ main .search #searchGame .searchBox {
   align-items: center;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 30px;
+  transition: 0.3s;
   -webkit-box-shadow: 1px 0px 8px 0px rgba(0, 0, 0, 0.9);
   box-shadow: 1px 0px 8px 0px rgba(0, 0, 0, 0.9);
 }
 main .search #searchGame .searchBox #searchForm {
   height: 25px;
-  border:none;
+  border: none;
   outline: none;
 }
 
-main .search #searchGame .searchBox:hover{
+main .search #searchGame .searchBox:hover {
   height: 45px;
 }
 
@@ -73,13 +76,14 @@ main .search #searchGame .searchBox #btn {
   border: none;
   background-color: #fff;
   font-size: 1.5rem;
+  transition: 0.2s;
 }
 main .search #searchGame .searchBox #btn:hover {
   cursor: pointer;
   font-size: 2rem;
 }
 
-hr{
+hr {
   margin-top: 20px;
   height: 0.2rem;
   background-color: red;
@@ -115,7 +119,7 @@ main .search #searchGame .category .categoryGroup li:hover {
   padding: 10px 0;
   font-size: 1.2rem;
   transition: 0.4s;
-  transform: translateX(5%)
+  transform: translateX(5%);
 }
 main .showGames {
   width: 80%;
