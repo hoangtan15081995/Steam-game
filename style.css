@@ -240,3 +240,85 @@ main .showGames .showDetailGame .detail .seeMore a {
   text-decoration: none;
   color: white;
 }
+@media only screen and(max-width: 414px ) {
+  header .nav-bar {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin: 0 30px; */
+}
+header .nav-bar .menu li {
+  list-style: none;
+  display: inline;
+  padding-right: 20px;
+  font-size: 15px;
+  color: white;
+  transition: 0.2s;
+}
+header .nav-bar .menu li a {
+  text-decoration: none;
+  list-style: none;
+  display: inline;
+  font-size: 15px;
+  color: white;
+  transition: 0.2s;
+}
+main .search #searchGame .category {
+  /* margin-top: 20px; */
+  /* margin: 15px; */
+  /* padding: 20px 0; */
+}
+main .search #searchGame .category .categoryGroup {
+  width: 100%;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  flex-wrap: wrap;
+}
+main .search #searchGame .category .categoryGroup li {
+  background-color: rgba(0, 0, 0, 0.733);
+  width: 20%;
+  /* border-radius: 15px; */
+  list-style: none;
+  font-size: 0.5rem;
+  padding: 12px 0;
+  /* margin-top: 20px; */
+  transition: 0.4s;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  max-height: 33px;
+}
+main .search #searchGame .searchBox {
+  background-color: white;
+  margin: auto;
+  width: 270px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 30px;
+  transition: 0.3s;
+  -webkit-box-shadow: 1px 0px 8px 0px rgb(0 0 0 / 90%);
+  box-shadow: 1px 0px 8px 0px rgb(0 0 0 / 90%);
+}
+main .showGames {
+  /* margin-left: 20%; */
+  width: 100%;
+  background-color: #66c0f4;
+  display: flex;
+  flex-flow: row wrap;
+  /* align-content: flex-start; */
+  height: auto;
+  justify-content: center;
+}
+
+
+
+
+
+}
