@@ -14,9 +14,9 @@ const renderAllGames = async () => {
     const allGames = await getAllGames();
     const showGames = document.querySelector(".showGames");
     allGames.data.forEach((game, index) => {
-    const app = allGames.data[index].appid;
-    const appid = document.createElement("div");
-    appid.innerHTML = `<div class="background">
+      const app = allGames.data[index].appid;
+      const appid = document.createElement("div");
+      appid.innerHTML = `<div class="background">
                        <div class="game_wrapper">
                          <div class="cover">
                            <img src="${game.header_image}">
@@ -27,11 +27,11 @@ const renderAllGames = async () => {
                          </div>
                        </div>
                      </div>`;
-    showGames.appendChild(appid);
-    appid.addEventListener("click", () => {
-      renderDetailGame(app);
+      showGames.appendChild(appid);
+      appid.addEventListener("click", () => {
+        renderDetailGame(app);
       })
-  })
+    })
   } catch (err) {
     console.log(err);
   }
@@ -46,11 +46,11 @@ const renderDetailGame = async (app) => {
     const detailGames = await resp.json();
     const showGames = document.querySelector(".showGames");
     showGames.innerHTML = "";
-    showGames.innerHTML =`<div class="showDetailGame" style="background-image: url(${detailGames.data.background})">
+    showGames.innerHTML = `<div class="showDetailGame" style="background-image: url(${detailGames.data.background})">
             <div class="detail">
               <div class="name">
                 <h2>${detailGames.data.name}</h2>
-                <p>Price:${ detailGames.data.price }</p>
+                <p>Price:${detailGames.data.price}</p>
               </div>
               <div class="picture">
                 <div class="img">
@@ -88,9 +88,9 @@ const renderListGamesToInput = async () => {
     const showGames = document.querySelector(".showGames");
     showGames.innerHTML = "";
     listGames.data.forEach((game, index) => {
-    const app = listGames.data[index].appid;
-    const div = document.createElement("div");
-    div.innerHTML = `<div class="background">
+      const app = listGames.data[index].appid;
+      const div = document.createElement("div");
+      div.innerHTML = `<div class="background">
                        <div class="game_wrapper">
                          <div class="cover">
                            <img src="${game.header_image}">
@@ -105,10 +105,10 @@ const renderListGamesToInput = async () => {
       div.addEventListener("click", () => {
         renderDetailGame(app);
       })
-      })
-    } catch (err) {
-      console.log(err);
-    }
+    })
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 
@@ -134,7 +134,7 @@ const renderListGamesToGenres = async (index) => {
     listGames.data.forEach((game) => {
       const app = listGames.data[index].appid;
       const div = document.createElement("div");
-    div.innerHTML = `<div class="background">
+      div.innerHTML = `<div class="background">
                         <div class="game_wrapper">
                            <div class="cover">
                              <img src="${game.header_image}">
@@ -149,10 +149,10 @@ const renderListGamesToGenres = async (index) => {
       div.addEventListener("click", () => {
         renderDetailGame(app);
       })
-      })
-    } catch (err) {
-      console.log(err);
-    }
+    })
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 
